@@ -1,5 +1,5 @@
 import { Header, QuoteForm } from "./components";
-import { benefits, company, process, projects, proofPoints, services } from "./content";
+import { company, process, projects, proofPoints, services } from "./content";
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
@@ -72,6 +72,7 @@ export default function Home() {
       </section>
 
       <section className="section process-section" id="proces">
+        <span className="anchor-target" id="o-nas" aria-hidden="true"></span>
         <img className="process-background" src="/process-background.png" width="2048" height="730" loading="lazy" alt="" />
         <div className="shell process-layout">
           <div>
@@ -84,24 +85,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section why-section" id="o-nas">
-        <img className="why-background" src="/why-background.png" width="2048" height="730" loading="lazy" alt="" />
-        <div className="shell why-strip">
-          <header>
-            <p className="eyebrow blue">Proč Metalcraft</p>
-            <h2>Proč spolupracovat<br /><span>právě s námi?</span></h2>
-          </header>
-          <div className="benefit-row">
-            {benefits.map((benefit, i) => <article key={benefit}><span>0{i + 1}</span><strong>{benefit}</strong></article>)}
-          </div>
-          <div className="why-cta">
-            <a className="button button-outline" href="#kontakt">Poptat zakázku <Arrow /></a>
-            <small>Nebo nám pošlete výkres</small>
-          </div>
-        </div>
-      </section>
-
       <section className="quote-section" id="kontakt">
+        <img className="quote-background" src="/quote-background.png" width="2048" height="730" loading="lazy" alt="" />
         <div className="shell quote-grid">
           <div className="quote-copy"><p className="eyebrow blue">Nezávazná poptávka</p><h2>Máte výkres, vzorek nebo jen představu?</h2><p>Pošlete nám podklady. Ozveme se vám, projdeme možnosti výroby a připravíme nezávaznou nabídku.</p><div className="contact-lines"><a href={`tel:${company.phone.replace(/\s/g, "")}`}>{company.phone}</a><a href={`mailto:${company.email}`}>{company.email}</a></div></div>
           <QuoteForm />
