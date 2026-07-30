@@ -17,7 +17,7 @@ export default function Home() {
     <main id="top">
       <Header />
       <section className="hero">
-        <img className="hero-visual" src="/client-assets/client-11.jpg" width="340" height="193" alt="Svařování průmyslové konstrukce přímo v provozu" fetchPriority="high" />
+        <img className="hero-visual" src="/metalcraft-hero.png" width="1984" height="793" alt="Přesné obrábění kovového dílu s jiskrami a zakázkovou konstrukcí" fetchPriority="high" />
         <div className="hero-shade"></div>
         <div className="hero-content shell">
           <div className="hero-copy">
@@ -72,6 +72,7 @@ export default function Home() {
       </section>
 
       <section className="section process-section" id="proces">
+        <img className="process-background" src="/process-background.png" width="2048" height="730" loading="lazy" alt="" />
         <div className="shell process-layout">
           <div>
             <p className="eyebrow blue">Jak pracujeme</p>
@@ -80,18 +81,22 @@ export default function Home() {
               {process.map(([num, title, text], i) => <article className="step" key={num}><div className="step-top"><span>{num}</span>{i < process.length - 1 && <i></i>}</div><h3>{title}</h3><p>{text}</p></article>)}
             </div>
           </div>
-          <img className="process-visual" src="/client-assets/client-28.jpg" width="437" height="291" loading="lazy" alt="Detail kompletované zelené průmyslové konstrukce" />
         </div>
       </section>
 
       <section className="section why-section" id="o-nas">
-        <div className="shell why-grid">
-          <img className="why-image" src="/client-assets/client-01.jpg" width="155" height="161" loading="lazy" alt="Detail zpracování nerezové svařované konstrukce" />
-          <div className="why-copy">
+        <img className="why-background" src="/why-background.png" width="2048" height="730" loading="lazy" alt="" />
+        <div className="shell why-strip">
+          <header>
             <p className="eyebrow blue">Proč Metalcraft</p>
-            <h2>Výroba, která začíná vaším požadavkem</h2>
-            <p>Neprodáváme katalogové produkty. Hledáme technické řešení, které odpovídá vašemu dílu, prostoru, procesu i tempu výroby.</p>
-            <ul>{benefits.map((benefit, i) => <li key={benefit}><span>0{i + 1}</span>{benefit}</li>)}</ul>
+            <h2>Proč spolupracovat<br /><span>právě s námi?</span></h2>
+          </header>
+          <div className="benefit-row">
+            {benefits.map((benefit, i) => <article key={benefit}><span>0{i + 1}</span><strong>{benefit}</strong></article>)}
+          </div>
+          <div className="why-cta">
+            <a className="button button-outline" href="#kontakt">Poptat zakázku <Arrow /></a>
+            <small>Nebo nám pošlete výkres</small>
           </div>
         </div>
       </section>
