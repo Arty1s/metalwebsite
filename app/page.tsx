@@ -1,5 +1,5 @@
 import { Header, QuoteForm } from "./components";
-import { benefits, company, metrics, process, projects, services } from "./content";
+import { benefits, company, process, projects, services } from "./content";
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
@@ -17,7 +17,7 @@ export default function Home() {
     <main id="top">
       <Header />
       <section className="hero">
-        <div className="hero-visual" role="img" aria-label="Přesný kovový přípravek ve výrobní hale"></div>
+        <img className="hero-visual" src="/photos/machined-aluminium-beams.jpg" width="340" height="193" alt="Přesně obrobené hliníkové nosníky v dílně" fetchPriority="high" />
         <div className="hero-shade"></div>
         <div className="hero-content shell">
           <div className="hero-copy">
@@ -33,12 +33,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="metrics" aria-label="Základní informace">
-        <div className="shell metrics-grid">
-          {metrics.map(([value, label], i) => <div className="metric" key={label}><span>0{i + 1}</span><div><strong>{value}</strong><small>{label}</small></div></div>)}
-        </div>
-      </section>
-
       <section className="section section-light" id="sluzby">
         <div className="shell">
           <header className="section-head split-head">
@@ -47,7 +41,7 @@ export default function Home() {
           </header>
           <div className="services-grid">
             {services.map((service, i) => <article className={`service-card service-${i + 1}`} key={service.title}>
-              <div className="sprite services-sprite" style={{ backgroundPosition: service.pos }} role="img" aria-label={service.title}></div>
+              <img src={service.image} width="340" height="255" alt={service.alt} loading="lazy" />
               <div className="card-copy"><span className="index">0{i + 1}</span><h3>{service.title}</h3><p>{service.text}</p><a href="#kontakt" aria-label={`Poptat službu ${service.title}`}>Zjistit možnosti <Arrow /></a></div>
             </article>)}
           </div>
@@ -61,9 +55,8 @@ export default function Home() {
             <p>Ukázky zakázkové výroby, kde rozhoduje přesnost, kvalitní příprava a spolehlivé provedení.</p>
           </header>
           <div className="projects-grid">
-            {projects.map((project, i) => <article className={`project-card ${project.span}`} key={project.title}>
-              <div className="sprite projects-sprite" style={{ backgroundPosition: project.pos }} role="img" aria-label={project.title}></div>
-              <div className="project-overlay"></div>
+            {projects.map((project, i) => <article className="project-card" key={project.title}>
+              <img src={project.image} width="355" height="266" alt={project.alt} loading="lazy" />
               <div className="project-copy"><span>{project.category} · 0{i + 1}</span><h3>{project.title}</h3><p>{project.summary}</p><a href="#kontakt">Zobrazit případovou studii <Arrow /></a></div>
             </article>)}
           </div>
@@ -82,7 +75,7 @@ export default function Home() {
 
       <section className="section why-section" id="o-nas">
         <div className="shell why-grid">
-          <div className="why-image" role="img" aria-label="Detail přesně obrobeného kovového dílu"></div>
+          <img className="why-image" src="/photos/assembled-industrial-frame.jpg" width="155" height="161" loading="lazy" alt="Sestavený průmyslový rám v dílně" />
           <div className="why-copy">
             <p className="eyebrow blue">Proč Metalcraft</p>
             <h2>Výroba, která začíná vaším požadavkem</h2>

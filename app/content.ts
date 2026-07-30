@@ -16,28 +16,21 @@ export const nav = [
   ["Kontakt", "#kontakt"],
 ] as const;
 
-export const metrics = [
-  ["100+", "Dokončených projektů"],
-  ["15+", "Let zkušeností"],
-  ["0,02 mm", "Dosažitelná přesnost"],
-  ["Kompletní servis", "Od návrhu po dodání"],
-] as const;
-
 export const services = [
-  { title: "CNC obrábění", text: "Přesné frézování, soustružení a opracování dílů podle výkresové dokumentace.", pos: "13% 42%" },
-  { title: "Svařování a kovové konstrukce", text: "Ocelové, nerezové i hliníkové konstrukce od přípravy po finální kompletaci.", pos: "39% 42%" },
-  { title: "Přípravky a jednoúčelová řešení", text: "Montážní, kontrolní a výrobní přípravky navržené pro váš konkrétní proces.", pos: "66% 42%" },
-  { title: "Povrchové úpravy", text: "Lakování, broušení a další finální úpravy v koordinaci s ověřenými partnery.", pos: "91% 42%" },
-  { title: "Zakázková technická výroba", text: "Kompletní zařízení a dílčí sestavy, které v katalogu jednoduše nenajdete.", pos: "52% 73%" },
+  { title: "CNC obrábění", text: "Přesné frézování, soustružení a opracování dílů podle výkresové dokumentace.", image: "/photos/stainless-machine-shaft.jpg", alt: "Přesně obrobená hřídel nerezového zařízení" },
+  { title: "Svařování a kovové konstrukce", text: "Ocelové, nerezové i hliníkové konstrukce od přípravy po finální kompletaci.", image: "/photos/welded-frame-assembly-work.jpg", alt: "Svařování průmyslové rámové konstrukce" },
+  { title: "Přípravky a jednoúčelová řešení", text: "Montážní, kontrolní a výrobní přípravky navržené pro váš konkrétní proces.", image: "/photos/mechanical-jig-detail.jpg", alt: "Detail zakázkového mechanického přípravku" },
+  { title: "Povrchové úpravy", text: "Lakování, broušení a další finální úpravy v koordinaci s ověřenými partnery.", image: "/photos/black-coated-cover-top.jpg", alt: "Černě lakovaný kovový kryt" },
+  { title: "Zakázková technická výroba", text: "Kompletní zařízení a dílčí sestavy, které v katalogu jednoduše nenajdete.", image: "/photos/blue-steel-machine-frame.jpg", alt: "Modrý ocelový rám průmyslového zařízení" },
 ];
 
 export const projects = [
-  { title: "Přesný montážní přípravek", category: "Přípravky", summary: "Pevné a opakovatelné ustavení dílů pro sériovou montáž.", pos: "42% 62%", span: "wide" },
-  { title: "Lakované díly výrobní linky", category: "Sériová výroba", summary: "Svařence a komponenty připravené pro dlouhodobý provoz.", pos: "15% 60%", span: "normal" },
-  { title: "Svařované nosné rámy", category: "Konstrukce", summary: "Rozměrově stabilní základ pro navazující technologii.", pos: "67% 62%", span: "normal" },
-  { title: "Nerezová technologická násypka", category: "Nerezová výroba", summary: "Kompletní sestava s důrazem na čistitelnost a detail.", pos: "90% 62%", span: "tall" },
-  { title: "Manipulační a plnicí konstrukce", category: "Technologické celky", summary: "Řešení navržené podle prostoru a způsobu obsluhy.", pos: "28% 73%", span: "normal" },
-  { title: "Část technologického zařízení", category: "Kompletace", summary: "Výroba, osazení a kontrola funkčního celku.", pos: "78% 73%", span: "wide" },
+  { title: "Přesný montážní přípravek", category: "Přípravky", summary: "Zakázkové ustavení dílů pro přesnou a opakovatelnou montáž.", image: "/photos/green-safety-enclosure-front.jpg", alt: "Zakázkový zelený rám s bezpečnostním oplocením" },
+  { title: "Svařované nosné rámy", category: "Konstrukce", summary: "Rozměrově stabilní základ pro navazující technologii.", image: "/photos/large-white-welded-panels.jpg", alt: "Velké bílé svařované ocelové panely" },
+  { title: "Nerezová technologická násypka", category: "Nerezová výroba", summary: "Kompletní nerezová sestava s důrazem na provedení detailů.", image: "/photos/stainless-hopper-side.jpg", alt: "Boční pohled na nerezovou technologickou násypku" },
+  { title: "Manipulační a plnicí konstrukce", category: "Technologické celky", summary: "Řešení připravené podle prostoru a způsobu obsluhy.", image: "/photos/green-industrial-frame-installation.jpg", alt: "Instalace zelené manipulační konstrukce" },
+  { title: "Část technologického zařízení", category: "Kompletace", summary: "Výroba a osazení dílčího funkčního celku.", image: "/photos/stainless-screw-conveyor.jpg", alt: "Nerezový šnekový dopravník ve výrobní hale" },
+  { title: "Lakované díly výrobní linky", category: "Sériová výroba", summary: "Lakované komponenty připravené pro další montáž.", image: "/photos/teal-painted-steel-rails.jpg", alt: "Lakované ocelové kolejnice pro výrobní linku" },
 ];
 
 export const process = [

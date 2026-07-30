@@ -8,7 +8,7 @@ Install dependencies with `npm install`, then run `npm run dev`. Create a produc
 
 ## Edit company information
 
-All placeholder company details, contact data, navigation, metrics, services, projects, process steps and benefits live in `app/content.ts`. Replace the placeholder canonical URL, address, phone, email and IČO there before launch.
+All placeholder company details, contact data, navigation, services, projects, process steps and benefits live in `app/content.ts`. Replace the placeholder canonical URL, address, phone, email and IČO there before launch.
 
 ## Edit services and case studies
 
