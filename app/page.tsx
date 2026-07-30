@@ -1,5 +1,5 @@
 import { Header, QuoteForm } from "./components";
-import { benefits, company, process, projects, services } from "./content";
+import { benefits, company, process, projects, proofPoints, services } from "./content";
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
@@ -17,7 +17,7 @@ export default function Home() {
     <main id="top">
       <Header />
       <section className="hero">
-        <img className="hero-visual" src="/photos/machined-aluminium-beams.jpg" width="340" height="193" alt="Přesně obrobené hliníkové nosníky v dílně" fetchPriority="high" />
+        <img className="hero-visual" src="/client-assets/client-11.jpg" width="340" height="193" alt="Svařování průmyslové konstrukce přímo v provozu" fetchPriority="high" />
         <div className="hero-shade"></div>
         <div className="hero-content shell">
           <div className="hero-copy">
@@ -33,13 +33,20 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="proof-strip" aria-label="Naše výrobní možnosti">
+        <div className="shell proof-grid">
+          {proofPoints.map(([title, text], i) => <article key={title}><span>0{i + 1}</span><div><strong>{title}</strong><p>{text}</p></div></article>)}
+        </div>
+      </section>
+
       <section className="section section-light" id="sluzby">
         <div className="shell">
-          <header className="section-head split-head">
-            <div><p className="eyebrow blue">Co děláme</p><h2>Co umíme<br />vyrobit</h2></div>
-            <p>Od jednotlivého přesného dílu až po kompletní technologickou sestavu. Každou zakázku stavíme kolem skutečné potřeby vašeho provozu.</p>
-          </header>
-          <div className="services-grid">
+          <div className="capabilities-layout">
+            <header className="capabilities-intro">
+              <p className="eyebrow blue">Co děláme</p><h2>Co umíme<br />vyrobit</h2>
+              <p>Od přesného dílu po kompletní technologickou sestavu. Každou zakázku stavíme kolem skutečné potřeby vašeho provozu.</p>
+              <a href="#kontakt">Více o službách <Arrow /></a>
+            </header>
             {services.map((service, i) => <article className={`service-card service-${i + 1}`} key={service.title}>
               <img src={service.image} width="340" height="255" alt={service.alt} loading="lazy" />
               <div className="card-copy"><span className="index">0{i + 1}</span><h3>{service.title}</h3><p>{service.text}</p><a href="#kontakt" aria-label={`Poptat službu ${service.title}`}>Zjistit možnosti <Arrow /></a></div>
@@ -50,32 +57,36 @@ export default function Home() {
 
       <section className="section projects-section" id="realizace">
         <div className="shell">
-          <header className="section-head split-head dark-head">
-            <div><p className="eyebrow blue">Vybrané realizace</p><h2>Projekty, za které<br />se můžeme postavit</h2></div>
-            <p>Ukázky zakázkové výroby, kde rozhoduje přesnost, kvalitní příprava a spolehlivé provedení.</p>
-          </header>
-          <div className="projects-grid">
-            {projects.map((project, i) => <article className="project-card" key={project.title}>
+          <div className="featured-layout">
+            <header className="featured-intro">
+              <p className="eyebrow blue">Vybrané realizace</p><h2>Projekty, za které se můžeme postavit</h2>
+              <p>Každý projekt je unikátní. Prohlédněte si samostatný archiv našich realizací.</p>
+              <a href="/realizace">Zobrazit všechny <Arrow /></a>
+            </header>
+            {projects.slice(0, 4).map((project, i) => <article className="project-card" key={project.title}>
               <img src={project.image} width="355" height="266" alt={project.alt} loading="lazy" />
-              <div className="project-copy"><span>{project.category} · 0{i + 1}</span><h3>{project.title}</h3><p>{project.summary}</p><a href="#kontakt">Zobrazit případovou studii <Arrow /></a></div>
+              <div className="project-copy"><span>{project.category} · 0{i + 1}</span><h3>{project.title}</h3><p>{project.summary}</p><a href={`/realizace/${project.slug}`}>Zobrazit případovou studii <Arrow /></a></div>
             </article>)}
           </div>
         </div>
       </section>
 
       <section className="section process-section" id="proces">
-        <div className="shell">
-          <p className="eyebrow blue">Jak pracujeme</p>
-          <h2>Jak probíhá spolupráce</h2>
-          <div className="timeline">
-            {process.map(([num, title, text], i) => <article className="step" key={num}><div className="step-top"><span>{num}</span>{i < process.length - 1 && <i></i>}</div><h3>{title}</h3><p>{text}</p></article>)}
+        <div className="shell process-layout">
+          <div>
+            <p className="eyebrow blue">Jak pracujeme</p>
+            <h2>Jak probíhá spolupráce</h2>
+            <div className="timeline">
+              {process.map(([num, title, text], i) => <article className="step" key={num}><div className="step-top"><span>{num}</span>{i < process.length - 1 && <i></i>}</div><h3>{title}</h3><p>{text}</p></article>)}
+            </div>
           </div>
+          <img className="process-visual" src="/client-assets/client-28.jpg" width="437" height="291" loading="lazy" alt="Detail kompletované zelené průmyslové konstrukce" />
         </div>
       </section>
 
       <section className="section why-section" id="o-nas">
         <div className="shell why-grid">
-          <img className="why-image" src="/photos/assembled-industrial-frame.jpg" width="155" height="161" loading="lazy" alt="Sestavený průmyslový rám v dílně" />
+          <img className="why-image" src="/client-assets/client-01.jpg" width="155" height="161" loading="lazy" alt="Detail zpracování nerezové svařované konstrukce" />
           <div className="why-copy">
             <p className="eyebrow blue">Proč Metalcraft</p>
             <h2>Výroba, která začíná vaším požadavkem</h2>
@@ -99,7 +110,7 @@ export default function Home() {
           <div><strong>Kontakt</strong><a href={`tel:${company.phone.replace(/\s/g, "")}`}>{company.phone}</a><a href={`mailto:${company.email}`}>{company.email}</a><span>{company.address}</span><span>IČO: {company.ico}</span></div>
           <div><strong>Sledujte nás</strong><a href="#" aria-label="LinkedIn">LinkedIn ↗</a><a href="#" aria-label="Instagram">Instagram ↗</a></div>
         </div>
-        <div className="shell copyright">© 2026 {company.name} s.r.o. Všechna práva vyhrazena. <a href="#">Ochrana soukromí</a></div>
+        <div className="shell copyright">© 2026 {company.name} s.r.o. Všechna práva vyhrazena. <a href="#">Ochrana soukromí</a><a href="/admin">Admin</a></div>
       </footer>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
     </main>
